@@ -18,7 +18,7 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.map = L.map('mapId').setView(
-      [-8.42602230497795, 119.29144368693532],
+      [51.505, -0.09],
       13
     );
 
@@ -27,22 +27,19 @@ export class HomePage {
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.map);
 
-    //Marker
-    const markerIcon = L.icon({
-      iconUrl: 'assets/icon/destination.png',
-      iconSize: [50, 50],
-      iconAnchor: [12, 41],
+     //Marker
+     const markerIcon = L.icon({
+      iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png', // Ganti dengan URL ikon marker default dari CDN
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png', // Ganti dengan URL ikon marker default 2x dari CDN
+      shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png', // Ganti dengan URL bayangan marker default dari CDN
+      iconSize: [45, 61], // Sesuaikan dengan ukuran ikon Anda
+      iconAnchor: [21, 41], // Sesuaikan dengan titik penunjuk ikon Anda
     });
-    const marker = L.marker([-8.42602230497795, 119.29144368693532], {
-      icon: markerIcon,
-    }).addTo(this.map);
-    const marker2 = L.marker([-8.531822973089568, 119.47108770542997], {
-      icon: markerIcon,
-    }).addTo(this.map);
+    
 
     //Pop-up information
-    marker.bindPopup('Pulau Gili Banta').openPopup();
-    marker2.bindPopup('Pulau Komodo').openPopup();
+    const marker = L.marker([51.505, -0.09], { icon: markerIcon }).addTo(this.map).bindPopup('London').openPopup();
+
 
     //Basemap
     const baseMaps = {
