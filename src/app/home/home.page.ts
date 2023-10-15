@@ -20,7 +20,8 @@ export class HomePage {
     this.map = L.map('mapId').setView(
       [51.505, -0.09],
       13
-    ); 
+    );
+    
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution:
