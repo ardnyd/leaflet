@@ -11,7 +11,7 @@ export class HomePage {
   basemaps!: string | any;
 
   constructor() {}
-  // ngOnInit() {
+  // ngOnInit() { 
 
   //   });
   // }
